@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學生卓越作品展 | 慈濟大學 經營管理學系</title>
+    
+    <!-- Icons & High-End Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Noto+Serif+TC:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           LUXURY EXECUTIVE DESIGN SYSTEM
+           ========================================================================== */
+        :root {
+            --bg-obsidian: #08090b;
+            --bg-card: rgba(18, 20, 26, 0.75);
+            --bg-card-hover: rgba(28, 32, 42, 0.85);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa820a;
+            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            --border-gold: rgba(212, 175, 55, 0.25);
+            --border-gold-glow: rgba(212, 175, 55, 0.6);
+            --text-main: #f1f3f5;
+            --text-muted: #9ba1a6;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --radius-lg: 16px;
+            --radius-sm: 8px;
+            --shadow-lux: 0 20px 50px rgba(0, 0, 0, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Serif TC', 'Playfair Display', serif;
+            background-color: var(--bg-obsidian);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(19, 62, 56, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 70%, rgba(212, 175, 55, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .gold-text {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Top Bar & Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(8, 9, 11, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-crest {
+            width: 52px;
+            height: 52px;
+            border: 1px solid var(--gold-primary);
+            background: linear-gradient(145deg, rgba(212,175,55,0.15), rgba(8,9,11,0.9));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-primary);
+            font-size: 1.5rem;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .brand-title h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--text-main);
+        }
+
+        .brand-title p {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            color: var(--gold-primary);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-item a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            padding: 8px 0;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-item a:hover, .nav-item.active a {
+            color: var(--gold-primary);
+        }
+
+        /* Header Hero Banner */
+        .page-banner {
+            padding: 80px 0 60px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-gold);
+            position: relative;
+            background: rgba(12, 14, 18, 0.6);
+        }
+
+        .page-banner h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .page-banner p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Filter Controls */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 50px 0 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-gold);
+            color: var(--text-muted);
+            padding: 10px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Noto Serif TC', serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: var(--transition-smooth);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--gold-gradient);
+            color: #08090b;
+            font-weight: 700;
+            border-color: transparent;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Works Grid */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            padding-bottom: 100px;
+        }
+
+        .work-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-lux);
+            position: relative;
+        }
+
+        .work-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-gold-glow);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
+        }
+
+        .media-container {
+            height: 240px;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .media-container img, .media-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+            filter: brightness(0.85);
+        }
+
+        .work-card:hover .media-container img {
+            transform: scale(1.08);
+            filter: brightness(1);
+        }
+
+        .media-tag {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(8, 9, 11, 0.85);
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-light);
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .work-content {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .work-category {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .work-title {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .work-desc {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        .author-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            padding-top: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .author-name {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .award-badge {
+            color: var(--gold-primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Footer */
+        footer {
+            background: #040506;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-gold);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-card {
+            background: rgba(18, 20, 26, 0.95);
+            border: 1px solid var(--border-gold-glow);
+            border-radius: var(--radius-lg);
+            max-width: 750px;
+            width: 100%;
+            padding: 36px;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.9);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            color: var(--gold-primary);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1024px) {
+            .works-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .works-grid { grid-template-columns: 1fr; }
+            .page-banner h2 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-crest">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <div class="brand-title">
+                    <h1 class="font-cinzel">慈濟大學 經營管理學系</h1>
+                    <p>DEPARTMENT OF BUSINESS MANAGEMENT, TCU</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="index.html"><i class="fa-solid fa-house"></i> 回首頁</a></li>
+                <li class="nav-item active"><a href="studentworks.html">學生作品展示</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- BANNER -->
+    <section class="page-banner">
+        <div class="container">
+            <h2 class="gold-text">Student Excellence Showcase</h2>
+            <p>展現慈濟經管系學子在「品牌策略、智慧新零售、CSR永續報告與創業競賽」中的頂尖實務成果與創新力作。</p>
+        </div>
+    </section>
+
+    <!-- CONTENT SECTION -->
+    <section>
+        <div class="container">
+            
+            <!-- Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="filterWorks('all')">全部作品 (All)</button>
+                <button class="filter-btn" onclick="filterWorks('strategy')">商業策略 (Strategy)</button>
+                <button class="filter-btn" onclick="filterWorks('retail')">智慧零售 (Smart Retail)</button>
+                <button class="filter-btn" onclick="filterWorks('esg')">永續ESG (CSR & ESG)</button>
+                <button class="filter-btn" onclick="filterWorks('video')">影音專題 (Video Showcase)</button>
+            </div>
+
+            <!-- Works Grid -->
+            <div class="works-grid">
+
+                <!-- Card 1: Image Project -->
+                <div class="work-card" data-category="strategy">
+                    <div class="media-container">
+                        <!-- LOCAL ASSET PATH FROM /graph FOLDER -->
+                        <img src="graph/work1.jpg" alt="地方創生品牌重塑企劃" onerror="this.src='https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80'">
+                        <span class="media-tag">商業專題</span>
+                    </div>
+                    <div class="work-content">
+                        <span class="work-category">Strategy & Branding</span>
+                        <h3 class="work-title">花蓮小農地方創生品牌重塑與跨境電商企劃</h3>
+                        <p class="work-desc">結合在地農產業，透過故事行銷與數據化社群媒體策略，成功協助在地品牌導入數位轉型與國際接軌計畫。</p>
+                        <div class="author-box">
+                            <div>團隊：<span class="author-name">陳立婷、張家豪 等</span></div>
+                            <div class="award-badge"><i class="fa-solid fa-trophy"></i> 專題競賽特優</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Video Project -->
+                <div class="work-card" data-category="video">
+                    <div class="media-container">
+                        <!-- LOCAL ASSET PATH FROM /graph FOLDER -->
+                        <video controls poster="graph/video_poster.jpg">
+                            <source src="graph/work_presentation.mp4" type="video/mp4">
+                            您的瀏覽器不支援 HTML5 影片標籤。
+                        </video>
+                        <span class="media-tag"><i class="fa-solid fa-play"></i> 影音紀錄</span>
+                    </div>
+                    <div class="work-content">
+                        <span class="work-category">Video Project</span>
+                        <h3 class="work-title">「知足咖啡館」營運流程再造與顧客體驗紀錄片</h3>
+                        <p class="work-desc">實地拍攝學生於知足咖啡館實習之營運優化、服務設計與顧客滿意度即時分析過程，呈現高規格實戰力。</p>
+                        <div class="author-box">
+                            <div>團隊：<span class="author-name">林宏宇、黃雅琪</span></div>
+                            <div class="award-badge"><i class="fa-solid fa-star"></i> 最佳影片創作獎</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Retail AI Project -->
+                <div class="work-card" data-category="retail">
+                    <div class="media-container">
+                        <!-- LOCAL ASSET PATH FROM /graph FOLDER -->
+                        <img src="graph/work2.jpg" alt="智慧無人商店熱點分析" onerror="this.src='https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80'">
+                        <span class="media-tag">智慧零售</span>
+                    </div>
+                    <div class="work-content">
+                        <span class="work-category">Smart Retail AI</span>
+                        <h3 class="work-title">基於影像辨識之智慧商店動線與擺設動態優化</h3>
+                        <p class="work-desc">利用智慧商店 Lab 之感測設備，大數據分析消費者停駐熱點，建立最佳化商品上架與動線配置演算法。</p>
+                        <div class="author-box">
+                            <div>團隊：<span class="author-name">廖建勛、王思涵</span></div>
+                            <div class="award-badge"><i class="fa-solid fa-award"></i> 產學合作優勝</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: ESG Project -->
+                <div class="work-card" data-category="esg">
+                    <div class="media-container">
+                        <!-- LOCAL ASSET PATH FROM /graph FOLDER -->
+                        <img src="graph/work3.jpg" alt="企業ESG永續報告書" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'">
+                        <span class="media-tag">永續治理</span>
+                    </div>
+                    <div class="work-content">
+                        <span class="work-category">CSR & ESG Report</span>
+                        <h3 class="work-title">大愛感恩科技之碳足跡盤查與 ESG 永續白皮書</h3>
+                        <p class="work-desc">深入分析再生紡織品供應鏈，對標 GRI 準則產出高品質企業永續報告書，為商業倫理實踐典範。</p>
+                        <div class="author-box">
+                            <div>團隊：<span class="author-name">許庭瑋、鄭文彬 等</span></div>
+                            <div class="award-badge"><i class="fa-solid fa-leaf"></i> 永續創新金獎</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Strategy Project -->
+                <div class="work-card" data-category="strategy">
+                    <div class="media-container">
+                        <!-- LOCAL ASSET PATH FROM /graph FOLDER -->
+                        <img src="graph/work4.jpg" alt="全國大專院校創業競賽" onerror="this.src='https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&q=80'">
+                        <span class="media-tag">創業競賽</span>
+                    </div>
+                    <div class="work-content">
+                        <span class="work-category">Entrepreneurship</span>
+                        <h3 class="work-title">GreenServe 循環經濟共享商務模式計畫書</h3>
+                        <p class="work-desc">發揮慈濟環保精神，設計可重複利用之商業包材與物流租賃系統，榮獲全國大專院校創新創業總冠軍。</p>
+                        <div class="author-box">
+                            <div>團隊：<span class="author-name">蔡哲遠、周沛穎</span></div>
+                            <div class="award-badge"><i class="fa-solid fa-crown"></i> 全國總冠軍</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Video/Retail Project -->
+                <div class="work-card" data-category="video">
+                    <div class="media-container">
+                        <!-- LOCAL ASSET PATH FROM /graph FOLDER -->
+                        <img src="graph/work5.jpg" alt="國際商務簡報影片" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80'">
+                        <span class="media-tag"><i class="fa-solid fa-film"></i> 外語簡報</span>
+                    </div>
+                    <div class="work-content">
+                        <span class="work-category">Global Business Presentation</span>
+                        <h3 class="work-title">全英語國際商務模擬策略展演與競爭對手分析</h3>
+                        <p class="work-desc">於國際商務教室進行全英語模擬商業談判與戰略發表，展示優秀的國際溝通與簡報能力。</p>
+                        <div class="author-box">
+                            <div>團隊：<span class="author-name">劉怡君、戴威廉</span></div>
+                            <div class="award-badge"><i class="fa-solid fa-globe"></i> 最佳外語簡報</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 慈濟大學 經營管理學系 Department of Business Management, TCU. All Rights Reserved.</p>
+            <p style="margin-top: 8px; font-size: 0.75rem; color: #666;">素材集中管理於 <code>graph/</code> 資料夾內。</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Filter Functionality
+        function filterWorks(category) {
+            // Update active button
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter cards
+            const cards = document.querySelectorAll('.work-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

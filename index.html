@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>慈濟大學 經營管理學系 | Department of Business Management, TCU</title>
+    
+    <!-- Icons & High-End Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Noto+Serif+TC:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           LUXURY EXECUTIVE DESIGN SYSTEM
+           ========================================================================== */
+        :root {
+            --bg-obsidian: #08090b;
+            --bg-card: rgba(18, 20, 26, 0.75);
+            --bg-card-hover: rgba(28, 32, 42, 0.85);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa820a;
+            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            --gold-text-gradient: linear-gradient(135deg, #e6ca65 0%, #ffffff 50%, #b88e2c 100%);
+            --border-gold: rgba(212, 175, 55, 0.25);
+            --border-gold-glow: rgba(212, 175, 55, 0.6);
+            --text-main: #f1f3f5;
+            --text-muted: #9ba1a6;
+            --accent-emerald: #133e38;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --radius-lg: 16px;
+            --radius-sm: 8px;
+            --shadow-lux: 0 20px 50px rgba(0, 0, 0, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Serif TC', 'Playfair Display', serif;
+            background-color: var(--bg-obsidian);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(19, 62, 56, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 70%, rgba(212, 175, 55, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        /* Gold Foil Accent Text */
+        .gold-text {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ==========================================================================
+           TOP EXECUTIVE BAR & NAVIGATION
+           ========================================================================== */
+        .top-executive-bar {
+            background: rgba(5, 6, 8, 0.95);
+            border-bottom: 1px solid var(--border-gold);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            padding: 10px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .top-executive-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-contact-info span {
+            margin-right: 24px;
+        }
+
+        .top-contact-info i {
+            color: var(--gold-primary);
+            margin-right: 8px;
+        }
+
+        .social-partners a {
+            color: var(--text-muted);
+            margin-left: 18px;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+
+        .social-partners a:hover {
+            color: var(--gold-primary);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(8, 9, 11, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-crest {
+            width: 52px;
+            height: 52px;
+            border: 1px solid var(--gold-primary);
+            background: linear-gradient(145deg, rgba(212,175,55,0.15), rgba(8,9,11,0.9));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-primary);
+            font-size: 1.5rem;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .brand-title h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--text-main);
+        }
+
+        .brand-title p {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            color: var(--gold-primary);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-item a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            padding: 8px 0;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--gold-gradient);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-item a:hover {
+            color: #ffffff;
+        }
+
+        .nav-item a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            color: var(--gold-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ==========================================================================
+           HERO SECTION (LUXURY EXECUTIVE OVERLAY)
+           ========================================================================== */
+        .hero-section {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(8, 9, 11, 0.6), rgba(8, 9, 11, 0.95)),
+                        url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            border-bottom: 1px solid var(--border-gold);
+            padding: 100px 0;
+        }
+
+        .hero-overlay-frame {
+            position: absolute;
+            inset: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        .hero-crest-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 24px;
+            border: 1px solid var(--border-gold);
+            background: rgba(18, 20, 26, 0.8);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 28px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.25;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+            line-height: 1.9;
+        }
+
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gold-gradient);
+            color: #08090b;
+            padding: 16px 40px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+            transition: var(--transition-smooth);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .btn-outline-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: transparent;
+            color: var(--gold-primary);
+            border: 1px solid var(--gold-primary);
+            padding: 16px 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+            margin-left: 16px;
+        }
+
+        .btn-outline-gold:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        /* ==========================================================================
+           EXECUTIVE STATS STRIP
+           ========================================================================== */
+        .stats-section {
+            background: rgba(12, 14, 18, 0.9);
+            border-bottom: 1px solid var(--border-gold);
+            padding: 50px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            border-right: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 10px 20px;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* ==========================================================================
+           SECTION GENERAL LAYOUT
+           ========================================================================== */
+        section {
+            padding: 110px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 70px;
+        }
+
+        .section-tag {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 2px;
+            background: var(--gold-gradient);
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           DEPARTMENT OVERVIEW & ORIGIN
+           ========================================================================== */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .overview-card-glass {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 50px;
+            box-shadow: var(--shadow-lux);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .overview-card-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gold-gradient);
+        }
+
+        .overview-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .pillar-list {
+            margin-top: 30px;
+            list-style: none;
+        }
+
+        .pillar-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .pillar-icon {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--gold-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-primary);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .overview-image-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-gold);
+            box-shadow: var(--shadow-lux);
+        }
+
+        .overview-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.85) contrast(1.1);
+            transition: var(--transition-smooth);
+        }
+
+        .overview-image-wrapper:hover img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+
+        /* ==========================================================================
+           WORLD-CLASS FACILITIES (LUXURY CARDS)
+           ========================================================================== */
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .facility-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-lux);
+        }
+
+        .facility-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--border-gold-glow);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.15);
+            background: var(--bg-card-hover);
+        }
+
+        .facility-img-container {
+            height: 240px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .facility-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+            transition: var(--transition-smooth);
+        }
+
+        .facility-card:hover .facility-img-container img {
+            transform: scale(1.08);
+            filter: brightness(1);
+        }
+
+        .facility-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(8, 9, 11, 0.85);
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-light);
+            padding: 4px 14px;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+        }
+
+        .facility-content {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .facility-title {
+            font-size: 1.35rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .facility-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            flex-grow: 1;
+            line-height: 1.7;
+        }
+
+        .facility-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gold-primary);
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .facility-link:hover {
+            color: #ffffff;
+            gap: 15px;
+        }
+
+        /* ==========================================================================
+           EXECUTIVE CURRICULUM & NAVIGATION TILES
+           ========================================================================== */
+        .executive-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .exec-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            padding: 36px;
+            border-radius: var(--radius-lg);
+            transition: var(--transition-smooth);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .exec-card:hover {
+            border-color: var(--gold-primary);
+            transform: translateY(-6px);
+            background: rgba(28, 32, 42, 0.9);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .exec-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 24px;
+            border: 1px solid var(--border-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-primary);
+            font-size: 1.8rem;
+            background: rgba(212, 175, 55, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .exec-card:hover .exec-icon {
+            background: var(--gold-gradient);
+            color: #08090b;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .exec-card h3 {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .exec-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================================================
+           DEPARTMENT CHAIR & LEADERSHIP
+           ========================================================================== */
+        .leadership-section {
+            background: linear-gradient(180deg, rgba(8, 9, 11, 0.95) 0%, rgba(15, 18, 24, 0.95) 100%);
+            border-top: 1px solid var(--border-gold);
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        .chair-card-luxury {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 50px;
+            align-items: center;
+            box-shadow: var(--shadow-lux);
+            position: relative;
+        }
+
+        .chair-portrait {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 2px solid var(--gold-primary);
+            padding: 8px;
+            background: rgba(8, 9, 11, 0.8);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--gold-primary);
+        }
+
+        .chair-details h3 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .chair-title-badge {
+            color: var(--gold-primary);
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .chair-info-list p {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+        }
+
+        .chair-info-list i {
+            color: var(--gold-primary);
+            width: 20px;
+        }
+
+        /* ==========================================================================
+           CONTACT & FOOTER
+           ========================================================================== */
+        footer {
+            background: #050607;
+            padding-top: 90px;
+            border-top: 1px solid var(--border-gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .footer-contact-info h3 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            font-size: 1.05rem;
+        }
+
+        .luxury-info-list li {
+            list-style: none;
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .luxury-info-list i {
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+            margin-top: 4px;
+        }
+
+        .luxury-info-list strong {
+            color: #ffffff;
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .luxury-info-list span {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .luxury-inquiry-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lux);
+        }
+
+        .luxury-inquiry-box h4 {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+
+        .form-control-lux {
+            width: 100%;
+            background: rgba(8, 9, 11, 0.8);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-sm);
+            padding: 14px 18px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            margin-bottom: 18px;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .form-control-lux:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        textarea.form-control-lux {
+            height: 120px;
+            resize: none;
+        }
+
+        .strategic-partners {
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .strategic-partners span {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            margin-right: 20px;
+        }
+
+        .partner-links a {
+            color: var(--gold-primary);
+            margin: 0 15px;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+
+        .partner-links a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px var(--gold-primary);
+        }
+
+        .footer-bottom {
+            background: #020304;
+            padding: 24px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================================================
+           MODAL (LUXURY GLASSMORPHISM)
+           ========================================================================== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-glass-card {
+            background: rgba(18, 20, 26, 0.95);
+            border: 1px solid var(--border-gold-glow);
+            border-radius: var(--radius-lg);
+            max-width: 650px;
+            width: 100%;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.9);
+            animation: modalSlide 0.4s ease-out;
+        }
+
+        @keyframes modalSlide {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            color: var(--gold-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-close-btn:hover {
+            color: #ffffff;
+        }
+
+        .modal-title-text {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-gold);
+            padding-bottom: 12px;
+        }
+
+        .modal-body-text {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Toast Message */
+        .toast-lux {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--gold-primary);
+            color: #ffffff;
+            padding: 16px 32px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-lux);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* ==========================================================================
+           RESPONSIVE DESIGN
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .facility-grid, .executive-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .overview-grid, .chair-card-luxury, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-executive-bar { display: none; }
+            .hero-title { font-size: 2.2rem; }
+            .nav-links {
+                position: absolute;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background: #08090b;
+                flex-direction: column;
+                padding: 30px;
+                border-bottom: 1px solid var(--border-gold);
+                display: none;
+            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .facility-grid, .executive-grid { grid-template-columns: 1fr; }
+            .btn-outline-gold { margin-left: 0; margin-top: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP EXECUTIVE STRIP -->
+    <div class="top-executive-bar">
+        <div class="container">
+            <div class="top-contact-info">
+                <span><i class="fa-solid fa-phone"></i> 03-857-2677 #31682</span>
+                <span><i class="fa-solid fa-envelope"></i> ss62@gms.tcu.edu.tw</span>
+                <span><i class="fa-solid fa-location-dot"></i> 花蓮市介仁街67號 (介仁校區)</span>
+            </div>
+            <div class="social-partners">
+                <a href="https://www.youtube.com" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION HEADER -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="brand-logo">
+                <div class="logo-crest">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <div class="brand-title">
+                    <h1 class="font-cinzel">慈濟大學 經營管理學系</h1>
+                    <p>DEPARTMENT OF BUSINESS MANAGEMENT, TCU</p>
+                </div>
+            </a>
+            <div class="mobile-menu-btn" id="mobile-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li class="nav-item"><a href="#overview">系所簡介</a></li>
+                <li class="nav-item"><a href="#facilities">頂級場域</a></li>
+                <li class="nav-item"><a href="#executive">前瞻特色</a></li>
+                <li class="nav-item"><a href="#leadership">系主任窗口</a></li>
+                <li class="nav-item"><a href="#contact">聯絡我們</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO EXECUTIVE SECTION -->
+    <section class="hero-section">
+        <div class="hero-overlay-frame"></div>
+        <div class="hero-content">
+            <div class="hero-crest-badge font-cinzel">
+                <i class="fa-solid fa-shield-halved"></i> 靜思卓越 · 智領未來
+            </div>
+            <h2 class="hero-title">Cultivating Visionary Leaders<br><span class="gold-text">With Ethical Excellence</span></h2>
+            <p class="hero-subtitle">慈濟大學經營管理學系融合倫理治理、前瞻商業策略與國際永續觀點，打造全球商業領袖的頂級知識殿堂。</p>
+            <div>
+                <a href="#facilities" class="btn-gold"><i class="fa-solid fa-compass"></i> 探索旗艦場域</a>
+                <a href="#contact" class="btn-outline-gold"><i class="fa-solid fa-paper-plane"></i> 入學預約諮詢</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <div class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number gold-text">100%</div>
+                    <div class="stat-label">理論與實務並重</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number gold-text">5+</div>
+                    <div class="stat-label">頂級專屬教學實驗室</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number gold-text">TOP</div>
+                    <div class="stat-label">倫理治理與永續管理</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number gold-text">GLOBAL</div>
+                    <div class="stat-label">全球海外交流視野</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERVIEW & ORIGIN SECTION -->
+    <section id="overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Our Department</span>
+                <h2 class="section-title">本系沿革與頂級定位</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="overview-grid">
+                <div class="overview-card-glass">
+                    <div class="overview-text">
+                        <p>慈濟大學經營管理學系立足於花蓮優美的介仁校區，承襲慈濟人文精神與嚴謹的學術風範。我們不僅專注於提供全方位的商業決策與高階管理知識，更將社會責任、商業倫理與永續發展（ESG）深植於課程核心。</p>
+                        <p>本系建構了結合理論與頂級實務的教學體驗，包含互動式個案研討、智慧新零售實驗室與知足咖啡館營運，培育具備全球前瞻思維與倫理品格的傑出管理人才。</p>
+                        <ul class="pillar-list">
+                            <li class="pillar-item">
+                                <div class="pillar-icon"><i class="fa-solid fa-gem"></i></div>
+                                <div>
+                                    <strong style="color:#fff;">卓越師資與學術倫理</strong>
+                                    <p style="font-size:0.9rem; margin:0;">集結國內外頂尖博士師資，提供高標準的個案引導教學。</p>
+                                </div>
+                            </li>
+                            <li class="pillar-item">
+                                <div class="pillar-icon"><i class="fa-solid fa-globe"></i></div>
+                                <div>
+                                    <strong style="color:#fff;">國際視野與多元實習</strong>
+                                    <p style="font-size:0.9rem; margin:0;">鏈結大愛感恩科技、靜思書軒及各大全球企業實習管道。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="overview-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80" alt="Executive Architecture">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORLD-CLASS FACILITIES SECTION -->
+    <section id="facilities" style="background: rgba(10, 12, 16, 0.8);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">World-Class Facilities</span>
+                <h2 class="section-title">頂級旗艦教學場域 & 實習空間</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="facility-grid">
+
+                <!-- Facility 1 -->
+                <div class="facility-card">
+                    <div class="facility-img-container">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Case Study Seminar Hall">
+                        <span class="facility-badge">Harvard Style</span>
+                    </div>
+                    <div class="facility-content">
+                        <h3 class="facility-title">個案教學研討室</h3>
+                        <p class="facility-desc">採哈佛大學高規格階梯研討佈局，結合智慧雙螢幕與即時數位討論系統，打造頂級互動商業決策殿堂。</p>
+                        <button class="facility-link" onclick="openModal('個案教學研討室 (Case Study Seminar Hall)', '個案教學研討室配備頂級階梯式環形研討桌、高品質影音音響與智慧互動白板。教師在此扮演高階顧問角色的引導者，激發學生針對國際企業真實案例進行攻防、策略辯論與商業決策模擬。')">探索場域細節 <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Facility 2 -->
+                <div class="facility-card">
+                    <div class="facility-img-container">
+                        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80" alt="Zhizu Cafe">
+                        <span class="facility-badge">Practicum Lab</span>
+                    </div>
+                    <div class="facility-content">
+                        <h3 class="facility-title">行銷流通實習教室 - 知足咖啡館</h3>
+                        <p class="facility-desc">高規格頂級精品餐飲與行銷流通實作場域，由學生親自參與品牌營運、成本財務精算與顧客體驗設計。</p>
+                        <button class="facility-link" onclick="openModal('知足咖啡館 (Zhizu Cafe Practicum Lab)', '知足咖啡館為經營管理學系專屬之實體營運實驗室。完美結合餐飲服務管理、顧客關係管理 (CRM)、供應鏈採購與行銷策略。學生在此第一線進行營運數據分析與服務流程再造，獲得極具價值的商業實務經驗。')">探索場域細節 <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Facility 3 -->
+                <div class="facility-card">
+                    <div class="facility-img-container">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="International Business Lounge">
+                        <span class="facility-badge">Executive Lounge</span>
+                    </div>
+                    <div class="facility-content">
+                        <h3 class="facility-title">國際商務教室</h3>
+                        <p class="facility-desc">尊榮安靜的沉浸式商務研析空間，提供跨國商業資訊檢索、外語商務談判與國際情勢模擬連線。</p>
+                        <button class="facility-link" onclick="openModal('國際商務教室 (International Business Executive Lounge)', '為培養國際級商業領袖而建構的高雅空間。配備國際彭博金融資訊連線模擬、彭博與各國權威商業期刊資料庫。適合進行跨國企業競爭策略研析、商務外語簡報與國際談判實作。')">探索場域細節 <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Facility 4 -->
+                <div class="facility-card">
+                    <div class="facility-img-container">
+                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="Presentation Suite">
+                        <span class="facility-badge">AV Tech Suite</span>
+                    </div>
+                    <div class="facility-content">
+                        <h3 class="facility-title">簡報與溝通教室</h3>
+                        <p class="facility-desc">引進專業影音錄播系統與廣播級演講設備，鍛鍊學生精準的商業演說、高階簡報技巧與領袖魅力。</p>
+                        <button class="facility-link" onclick="openModal('簡報與溝通教室 (Executive Presentation Suite)', '擁有專業錄影棚等級的影音側錄與回放系統。學生透過即時影音分析自身的肢體語言、語調口條與簡報邏輯，精準訓練出符合世界500強企業標準的高階簡報能力。')">探索場域細節 <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Facility 5 -->
+                <div class="facility-card">
+                    <div class="facility-img-container">
+                        <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="Smart Store AI Lab">
+                        <span class="facility-badge">Smart Retail AI</span>
+                    </div>
+                    <div class="facility-content">
+                        <h3 class="facility-title">智慧商店 Lab</h3>
+                        <p class="facility-desc">前瞻智慧新零售與無人商店實驗室，展示AI零售數據分析、智慧結帳與消費者行為路徑追蹤。</p>
+                        <button class="facility-link" onclick="openModal('智慧商店 (Smart Retail AI Lab)', '專為未來新零售趨勢打造之創新科技空間。結合自動結帳POS、RFID感應棚架、消費者熱點視覺分析與AI數據驅動決策，讓學生在校即可探索最前瞻的智慧商業模式。')">探索場域細節 <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXECUTIVE CURRICULUM & NAVIGATION TILES -->
+    <section id="executive">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Executive Curriculum</span>
+                <h2 class="section-title">全方位前瞻學習與職涯體系</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="executive-grid">
+                <div class="exec-card" onclick="openModal('師資介紹', '本系師資均擁有國內外知名頂尖大學博士學位，專長橫跨策略管理、行銷管理、財金決策、智慧零售與組織行為，提供國際標準的優質教學。')">
+                    <div class="exec-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <h3>頂級師資陣容</h3>
+                    <p>國際名校學界與業界高階顧問聯合授課</p>
+                </div>
+                <div class="exec-card" onclick="openModal('課程規劃', '核心課程圍繞「企業倫理與永續治理」、「智慧行銷與零售科技」及「財務金融與策略決策」三大主軸，並輔以高階個案教學。')">
+                    <div class="exec-icon"><i class="fa-solid fa-scroll"></i></div>
+                    <h3>前瞻課程規劃</h3>
+                    <p>符合國際ESG與AI數位轉型趨勢</p>
+                </div>
+                <div class="exec-card" onclick="openModal('實習專區', '提供國內外企業實習機會，包括大愛感恩科技、靜思書軒、知名金融機構與零售巨頭，達成畢業即就業。')">
+                    <div class="exec-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3>企業實習與實務</h3>
+                    <p>全球企業深度實習與業界導師引導</p>
+                </div>
+                <div class="exec-card" onclick="openModal('國際交流', '與全球多所頂尖大學締結姐妹校，提供海外交換學生、雙聯學位及國際研討會參與機會。')">
+                    <div class="exec-icon"><i class="fa-solid fa-earth-americas"></i></div>
+                    <h3>全球國際交流</h3>
+                    <p>拓展國際思維與海外學習鏈結</p>
+                </div>
+                <div class="exec-card" onclick="openModal('畢業發展', '畢業生多任職於各大金控、知名跨國企業行銷企劃、人資主管，或深造於國內外一流商管研究所。')">
+                    <div class="exec-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>畢業極致發展</h3>
+                    <p>高薪職場競爭力與優質校友網絡</p>
+                </div>
+                <div class="exec-card" onclick="openModal('招生管道', '提供繁星推薦、申請入學、分發入學及特殊選才等多軌管道，歡迎具國際志向之學生加入。')">
+                    <div class="exec-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>多元招生管道</h3>
+                    <p>歡迎優秀青年學子報考慈濟經管系</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPARTMENT CHAIR & LEADERSHIP -->
+    <section id="leadership" class="leadership-section">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 40px;">
+                <span class="section-tag">Department Leadership</span>
+                <h2 class="section-title">系所主管與個人資料保護窗口</h2>
+            </div>
+            <div class="chair-card-luxury">
+                <div class="chair-portrait">
+                    <i class="fa-solid fa-user-gear"></i>
+                </div>
+                <div class="chair-details">
+                    <h3>林珍如 主任</h3>
+                    <span class="chair-title-badge">DEPARTMENT CHAIR / DATA PROTECTION OFFICER</span>
+                    <div class="chair-info-list">
+                        <p><i class="fa-solid fa-phone"></i> <strong>主管直撥電話：</strong> 03-857-2677 分機 33126</p>
+                        <p><i class="fa-solid fa-envelope"></i> <strong>系主任 E-mail：</strong> lih5374@gms.tcu.edu.tw</p>
+                        <p><i class="fa-solid fa-building-user"></i> <strong>主管辦公室：</strong> 慈濟大學介仁校區 經管系主任室</p>
+                        <p><i class="fa-solid fa-shield-halved"></i> <strong>業務職責：</strong> 統籌系務發展策略、國際學術合作、個資保護監督與高階人才培育</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & FOOTER -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-contact-info">
+                    <h3>與我們聯繫</h3>
+                    <p>歡迎企業產學合作、高中生入學諮詢與學術交流。</p>
+                    <ul class="luxury-info-list">
+                        <li>
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <div>
+                                <strong>校區地址</strong>
+                                <span>970 花蓮市介仁街67號 (慈濟大學介仁校區)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <strong>系辦公室總機</strong>
+                                <span>03-857-2677 分機 31682</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <strong>公務諮詢信箱</strong>
+                                <span>ss62@gms.tcu.edu.tw</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="luxury-inquiry-box">
+                    <h4><i class="fa-regular fa-paper-plane"></i> VIP 尊榮線上諮詢</h4>
+                    <form onsubmit="handleFormSubmit(event)">
+                        <input type="text" class="form-control-lux" placeholder="您的尊姓大名" required>
+                        <input type="email" class="form-control-lux" placeholder="您的 E-mail 信箱" required>
+                        <input type="text" class="form-control-lux" placeholder="諮詢主題 (例如: 入學招生 / 產學實習 / 參訪)" required>
+                        <textarea class="form-control-lux" placeholder="請詳細說明您的需求..." required></textarea>
+                        <button type="submit" class="btn-gold" style="width: 100%; justify-content: center;">發送高階諮詢訊息</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Strategic Partners Bar -->
+            <div class="strategic-partners">
+                <span>STRATEGIC PARTNERS & LINKS</span>
+                <div class="partner-links" style="display: inline-block;">
+                    <a href="https://www.daai.allmarketing.com.tw" target="_blank">大愛感恩科技</a> |
+                    <a href="https://www.jingsi.com.tw" target="_blank">靜思書軒</a> |
+                    <a href="https://www.tcu.edu.tw" target="_blank">慈濟大學官方網站</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 慈濟大學 經營管理學系 Department of Business Management, Tzu Chi University. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LUXURY MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-glass-card">
+            <span class="modal-close-btn" onclick="closeModal()">&times;</span>
+            <h3 class="modal-title-text gold-text" id="modalTitleText">標題</h3>
+            <div class="modal-body-text" id="modalBodyText">
+                詳細訊息...
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST LUX -->
+    <div class="toast-lux" id="toastLux">
+        <i class="fa-solid fa-circle-check" style="color:var(--gold-primary);"></i> <span id="toastMsg">訊息已發送</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-item a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Modal Functionality
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalTitleText = document.getElementById('modalTitleText');
+        const modalBodyText = document.getElementById('modalBodyText');
+
+        function openModal(title, content) {
+            modalTitleText.innerText = title;
+            modalBodyText.innerText = content;
+            modalOverlay.classList.add('active');
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // Form Submit
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast("感謝您的諮詢！系辦公室將有專人於 24 小時內與您聯繫。");
+            e.target.reset();
+        }
+
+        // Toast
+        function showToast(msg) {
+            const toast = document.getElementById('toastLux');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.innerText = msg;
+            toast.style.display = 'flex';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
