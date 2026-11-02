@@ -210,7 +210,7 @@
             <!-- 作品 1 -->
             <article class="work-card">
                 <div class="img-container">
-                    <img src="./graph/1000021518.jpg" alt="學生作品 1" onerror="tryAltExt(this, '1000021518')">
+                    <img src="graph/graph/1000021518.jpg" alt="學生作品 1">
                 </div>
                 <div class="card-content">
                     <span class="tag">GRAPH / 1000021518.jpg</span>
@@ -222,19 +222,19 @@
             <!-- 作品 2 -->
             <article class="work-card">
                 <div class="img-container">
-                    <img src="./graph/1000021521.jpg" alt="學生作品 2" onerror="tryAltExt(this, '1000021521')">
+                    <img src="graph/graph/1000021521.jpg" alt="學生作品 2">
                 </div>
                 <div class="card-content">
                     <span class="tag">GRAPH / 1000021521.jpg</span>
                     <h2 class="card-title">經營管理專題成果展示二</h2>
-                    <p class="card-desc">學生於知足咖啡館實習或實務運務之場域體驗與活動紀錄。</p>
+                    <p class="card-desc">學生於知足咖啡館實習或實務運作之場域體驗與活動紀錄。</p>
                 </div>
             </article>
 
             <!-- 作品 3 -->
             <article class="work-card">
                 <div class="img-container">
-                    <img src="./graph/1000021522.jpg" alt="學生作品 3" onerror="tryAltExt(this, '1000021522')">
+                    <img src="graph/graph/1000021522.jpg" alt="學生作品 3">
                 </div>
                 <div class="card-content">
                     <span class="tag">GRAPH / 1000021522.jpg</span>
@@ -251,20 +251,5 @@
         <p>© 2026 慈濟大學經營管理學系 版權所有 | Tzu Chi University</p>
     </footer>
 
-    <!-- 自動修復圖片副檔名腳本 -->
-    <script>
-        function tryAltExt(img, filename) {
-            const exts = ['.JPG', '.jpeg', '.PNG', '.png', '.webp'];
-            let currentTry = img.getAttribute('data-try') || 0;
-            currentTry = parseInt(currentTry);
-
-            if (currentTry < exts.length) {
-                img.setAttribute('data-try', currentTry + 1);
-                img.src = './graph/' + filename + exts[currentTry];
-            } else {
-                img.onerror = null; // 停止嘗試
-            }
-        }
-    </script>
 </body>
 </html>
