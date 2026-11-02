@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>學生作品展示 - 慈濟大學經營管理學系</title>
+    <title>慈濟大學 經營管理學系 | Department of Business Management</title>
     
-    <!-- 奢華字體與 Icon -->
+    <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Serif+TC:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -35,7 +35,7 @@
             overflow-x: hidden;
         }
 
-        /* 頂部導覽列 */
+        /* 導覽列 */
         header {
             background: rgba(8, 9, 11, 0.95);
             backdrop-filter: blur(12px);
@@ -60,6 +60,11 @@
             gap: 10px;
         }
 
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
         .nav-link {
             color: var(--text-light);
             text-decoration: none;
@@ -80,39 +85,47 @@
         /* Hero 橫幅 */
         .hero-banner {
             text-align: center;
-            padding: 70px 20px 40px;
-            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            padding: 90px 20px 60px;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
         }
 
         .hero-banner h1 {
             font-family: 'Cinzel', 'Noto Serif TC', serif;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--gold-main);
-            margin-bottom: 12px;
-            letter-spacing: 3px;
+            margin-bottom: 15px;
+            letter-spacing: 4px;
         }
 
         .hero-banner p {
             color: var(--text-dim);
-            font-size: 0.95rem;
+            font-size: 1rem;
             letter-spacing: 2px;
         }
 
-        /* 主內容區 */
+        /* 內容區 */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px 80px;
         }
 
-        .works-grid {
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            color: var(--gold-main);
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        .facilities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        /* 卡片設計 */
-        .work-card {
+        .facility-card {
             background: var(--card-bg);
             border: 1px solid var(--border-gold);
             border-radius: 8px;
@@ -120,7 +133,7 @@
             transition: all 0.4s ease;
         }
 
-        .work-card:hover {
+        .facility-card:hover {
             transform: translateY(-8px);
             border-color: var(--gold-main);
             box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
@@ -131,18 +144,16 @@
             height: 240px;
             overflow: hidden;
             background: #111;
-            position: relative;
         }
 
         .img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
             transition: transform 0.5s ease;
         }
 
-        .work-card:hover .img-container img {
+        .facility-card:hover .img-container img {
             transform: scale(1.05);
         }
 
@@ -150,19 +161,8 @@
             padding: 22px;
         }
 
-        .tag {
-            font-family: 'Cinzel', sans-serif;
-            font-size: 0.75rem;
-            color: var(--gold-main);
-            border: 1px solid var(--border-gold);
-            padding: 3px 10px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
         .card-title {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: #ffffff;
             margin-bottom: 8px;
             font-weight: 600;
@@ -170,8 +170,32 @@
 
         .card-desc {
             color: var(--text-dim);
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             line-height: 1.6;
+        }
+
+        /* 聯絡資訊 */
+        .contact-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-gold);
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-item h3 {
+            color: var(--gold-main);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .contact-item p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-bottom: 6px;
         }
 
         /* 頁尾 */
@@ -190,59 +214,74 @@
     <!-- 頂部導覽列 -->
     <header>
         <a href="index.html" class="brand">
-            <i class="fa-solid fa-gem"></i> TCU DEPARTMENT OF BUSINESS MANAGEMENT
+            <i class="fa-solid fa-gem"></i> TCU BUSINESS MANAGEMENT
         </a>
-        <a href="index.html" class="nav-link">
-            <i class="fa-solid fa-arrow-left"></i> 返回首頁
-        </a>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">系所簡介</a>
+            <a href="studentworks.html" class="nav-link">學生作品展示</a>
+        </nav>
     </header>
 
-    <!-- Hero 標題區塊 -->
+    <!-- Hero 標題區 -->
     <section class="hero-banner">
-        <h1>STUDENT PORTFOLIO</h1>
-        <p>慈濟大學經營管理學系 — 學生學習成果與專題展示</p>
+        <h1>DEPARTMENT OF BUSINESS MANAGEMENT</h1>
+        <p>慈濟大學 經營管理學系</p>
     </section>
 
-    <!-- 主內容區 -->
+    <!-- 專業場域區塊 -->
     <main class="container">
-        <div class="works-grid">
+        <h2 class="section-title">SPECIALIZED FACILITIES</h2>
+        <div class="facilities-grid">
 
-            <!-- 作品 1 -->
-            <article class="work-card">
+            <!-- 專業教室 1 -->
+            <article class="facility-card">
                 <div class="img-container">
-                    <img src="graph/graph/1000021518.jpg" alt="學生作品 1">
+                    <img src="graph/graph/1000021518.jpg" alt="個案教學研討室" onerror="fixImgPath(this, '1000021518.jpg')">
                 </div>
                 <div class="card-content">
-                    <span class="tag">GRAPH / 1000021518.jpg</span>
-                    <h2 class="card-title">經營管理專題成果展示一</h2>
-                    <p class="card-desc">學生於課程中完成之經營管理、個案研討或創新企劃成果展示。</p>
+                    <h3 class="card-title">個案教學研討室</h3>
+                    <p class="card-desc">以翻轉教育理論設計的個案討論環境，培養學生團隊合作與深度思考能力。</p>
                 </div>
             </article>
 
-            <!-- 作品 2 -->
-            <article class="work-card">
+            <!-- 專業教室 2 -->
+            <article class="facility-card">
                 <div class="img-container">
-                    <img src="graph/graph/1000021521.jpg" alt="學生作品 2">
+                    <img src="graph/graph/1000021521.jpg" alt="知足咖啡館實習教室" onerror="fixImgPath(this, '1000021521.jpg')">
                 </div>
                 <div class="card-content">
-                    <span class="tag">GRAPH / 1000021521.jpg</span>
-                    <h2 class="card-title">經營管理專題成果展示二</h2>
-                    <p class="card-desc">學生於知足咖啡館實習或實務運作之場域體驗與活動紀錄。</p>
+                    <h3 class="card-title">經營管理學系實習教室 (知足咖啡館)</h3>
+                    <p class="card-desc">外場行銷體驗實習場域，建置高規專業餐飲與服務設備，打造真實經營體驗。</p>
                 </div>
             </article>
 
-            <!-- 作品 3 -->
-            <article class="work-card">
+            <!-- 專業教室 3 -->
+            <article class="facility-card">
                 <div class="img-container">
-                    <img src="graph/graph/1000021522.jpg" alt="學生作品 3">
+                    <img src="graph/graph/1000021522.jpg" alt="國際商務與簡報教室" onerror="fixImgPath(this, '1000021522.jpg')">
                 </div>
                 <div class="card-content">
-                    <span class="tag">GRAPH / 1000021522.jpg</span>
-                    <h2 class="card-title">經營管理專題成果展示三</h2>
-                    <p class="card-desc">學生參與商業策略簡報競賽、團隊合作與簡報發表之精采時刻。</p>
+                    <h3 class="card-title">簡報與溝通教室</h3>
+                    <p class="card-desc">具備高級簡報投影與影音設備，提供安靜舒適研習與專題發表空間。</p>
                 </div>
             </article>
 
+        </div>
+
+        <!-- 聯絡資訊 -->
+        <div class="contact-box">
+            <div class="contact-item">
+                <h3><i class="fa-solid fa-location-dot"></i> 系所地址</h3>
+                <p>花蓮市介仁街67號</p>
+                <p>電話：03-857-2677 #31682</p>
+                <p>電子郵件：ss62@gms.tcu.edu.tw</p>
+            </div>
+            <div class="contact-item">
+                <h3><i class="fa-solid fa-user-tie"></i> 個人資料保護窗口</h3>
+                <p>姓名：林珍如 主任</p>
+                <p>聯絡電話：03-857-2677 #33126</p>
+                <p>電子郵件：lih5374@gms.tcu.edu.tw</p>
+            </div>
         </div>
     </main>
 
@@ -251,5 +290,15 @@
         <p>© 2026 慈濟大學經營管理學系 版權所有 | Tzu Chi University</p>
     </footer>
 
+    <!-- 路徑自動相容處理 -->
+    <script>
+        function fixImgPath(img, filename) {
+            // 如果兩層目錄抓不到，自動回退嘗試單層目錄 graph/
+            if (!img.dataset.tried) {
+                img.dataset.tried = "1";
+                img.src = 'graph/' + filename;
+            }
+        }
+    </script>
 </body>
 </html>
