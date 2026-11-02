@@ -12,7 +12,7 @@
     <style>
         :root {
             --bg-dark: #08090b;
-            --card-bg: rgba(20, 22, 28, 0.7);
+            --card-bg: rgba(20, 22, 28, 0.75);
             --gold-main: #d4af37;
             --gold-light: #f3e5ab;
             --gold-dark: #aa7c11;
@@ -37,7 +37,7 @@
 
         /* 頂部導覽列 */
         header {
-            background: rgba(8, 9, 11, 0.9);
+            background: rgba(8, 9, 11, 0.95);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-gold);
             padding: 18px 40px;
@@ -128,15 +128,17 @@
 
         .img-container {
             width: 100%;
-            height: 250px;
+            height: 240px;
             overflow: hidden;
-            background: #000;
+            background: #111;
+            position: relative;
         }
 
         .img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
             transition: transform 0.5s ease;
         }
 
@@ -208,10 +210,10 @@
             <!-- 作品 1 -->
             <article class="work-card">
                 <div class="img-container">
-                    <img src="graph/1000021518.jpg" alt="學生作品 1">
+                    <img src="./graph/1000021518.jpg" alt="學生作品 1" onerror="tryAltExt(this, '1000021518')">
                 </div>
                 <div class="card-content">
-                    <span class="tag">GRAPH / 1000021518.JPG</span>
+                    <span class="tag">GRAPH / 1000021518.jpg</span>
                     <h2 class="card-title">經營管理專題成果展示一</h2>
                     <p class="card-desc">學生於課程中完成之經營管理、個案研討或創新企劃成果展示。</p>
                 </div>
@@ -220,24 +222,24 @@
             <!-- 作品 2 -->
             <article class="work-card">
                 <div class="img-container">
-                    <img src="graph/1000021521.jpg" alt="學生作品 2">
+                    <img src="./graph/1000021521.jpg" alt="學生作品 2" onerror="tryAltExt(this, '1000021521')">
                 </div>
                 <div class="card-content">
-                    <span class="tag">GRAPH / 1000021521.JPG</span>
+                    <span class="tag">GRAPH / 1000021521.jpg</span>
                     <h2 class="card-title">經營管理專題成果展示二</h2>
-                    <p class="card-desc">學生於知足咖啡館實習或實務運作之場域體驗與活動紀錄。</p>
+                    <p class="card-desc">學生於知足咖啡館實習或實務運務之場域體驗與活動紀錄。</p>
                 </div>
             </article>
 
             <!-- 作品 3 -->
             <article class="work-card">
                 <div class="img-container">
-                    <img src="graph/1000021522.jpg" alt="學生作品 3">
+                    <img src="./graph/1000021522.jpg" alt="學生作品 3" onerror="tryAltExt(this, '1000021522')">
                 </div>
                 <div class="card-content">
-                    <span class="tag">GRAPH / 1000021522.JPG</span>
+                    <span class="tag">GRAPH / 1000021522.jpg</span>
                     <h2 class="card-title">經營管理專題成果展示三</h2>
-                    <p class="card-desc">學生參與商業策略簡報競賽、團隊合作與簡報發表之精采 لحظ。</p>
+                    <p class="card-desc">學生參與商業策略簡報競賽、團隊合作與簡報發表之精采時刻。</p>
                 </div>
             </article>
 
@@ -249,5 +251,20 @@
         <p>© 2026 慈濟大學經營管理學系 版權所有 | Tzu Chi University</p>
     </footer>
 
+    <!-- 自動修復圖片副檔名腳本 -->
+    <script>
+        function tryAltExt(img, filename) {
+            const exts = ['.JPG', '.jpeg', '.PNG', '.png', '.webp'];
+            let currentTry = img.getAttribute('data-try') || 0;
+            currentTry = parseInt(currentTry);
+
+            if (currentTry < exts.length) {
+                img.setAttribute('data-try', currentTry + 1);
+                img.src = './graph/' + filename + exts[currentTry];
+            } else {
+                img.onerror = null; // 停止嘗試
+            }
+        }
+    </script>
 </body>
 </html>
